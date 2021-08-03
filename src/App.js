@@ -21,7 +21,7 @@ function App() {
     setTimeout(() => {
       setText('inside set timeout')
       window.location.replace(appUrl);
-    }, 25);
+    }, 1000);
     setText('outside')
     window.location.replace(appName);
   }
@@ -30,7 +30,7 @@ function App() {
     <div className="container">
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
-      <div>{text}</div>
+      <div>Bilgi: {text}</div>
       {/* <iframe title="app" src={iframeSrc} id="l" width="1" height="1" style={{visibility: 'hidden'}}></iframe> */}
     </div>
   );
