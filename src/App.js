@@ -11,11 +11,13 @@ function App() {
   }
 
   function onClickAndroidApp () {
+    const now = new Date().valueOf();
     const appUrl = 'https://play.google.com/store/apps/details?id=com.inomera.sm';
     const appName = 'sanalmarket://';
     setTimeout(() => {
+      if (new Date().valueOf() - now > 100) return;
       window.location.replace(appUrl);
-    }, 100);
+    }, 25);
     window.location.replace(appName);
   }
 
