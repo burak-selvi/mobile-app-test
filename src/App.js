@@ -1,7 +1,10 @@
 import './App.css';
+import {useState} from 'react';
 
 function App() {
   // const [iframeSrc, setIframeSrc] = useState('');
+  const [text, setText] = useState('');
+
   function onClickIosApp () {
     const appUrl = 'https://apps.apple.com/tr/app/migros-sanal-market/id397585390?l=tr';
     const appName = 'sanalmarket://';
@@ -16,8 +19,10 @@ function App() {
     const appName = 'sanalmarket://';
     // setIframeSrc(appName);
     setTimeout(() => {
+      setText('inside set timeout')
       window.location.replace(appUrl);
     }, 25);
+    setText('outside')
     window.location.replace(appName);
   }
 
@@ -25,6 +30,7 @@ function App() {
     <div className="container">
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
+      <div>{text}</div>
       {/* <iframe title="app" src={iframeSrc} id="l" width="1" height="1" style={{visibility: 'hidden'}}></iframe> */}
     </div>
   );
