@@ -37,7 +37,7 @@ function App() {
     window.location.replace(appName);
     setTimeout(() => {
       setText('inside:' + appUrl)
-      if (visibility) {
+      if (!visibility) {
         return;
       }
       window.location.replace(appUrl);
@@ -46,7 +46,7 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.1.0</div>
+      <div>Version: 1.1.1</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Bilgi: {text}</div>
