@@ -31,10 +31,11 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.0.5</div>
+      <div>Version: 1.0.6</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Bilgi: {text}</div>
+      <div>Bilgi - document: {document.hidden}</div>
       {/* <iframe title="app" src={iframeSrc} id="l" width="1" height="1" style={{visibility: 'hidden'}}></iframe> */}
     </div>
   );
