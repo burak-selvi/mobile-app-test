@@ -8,10 +8,12 @@ function App() {
   function onClickIosApp () {
     const appUrl = 'https://apps.apple.com/tr/app/migros-sanal-market/id397585390?l=tr';
     const appName = 'sanalmarket://';
+    setText('outside:' + appName);
+    window.location.replace(appName);
     setTimeout(() => {
+      setText('inside:' + appUrl);
       window.location.replace(appUrl);
     }, 100);
-    window.location.replace(appName);
   }
 
   function onClickAndroidApp () {
@@ -21,14 +23,14 @@ function App() {
     setText('outside:' + appName)
     window.location.replace(appName);
     setTimeout(() => {
-      setText('inside set timeout:' + appUrl)
+      setText('inside:' + appUrl)
       window.location.replace(appUrl);
     }, 100);
   }
 
   return (
     <div className="container">
-      <div>Version: 1.0.0</div>
+      <div>Version: 1.0.1</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Bilgi: {text}</div>
