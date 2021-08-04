@@ -21,7 +21,7 @@ function App() {
 
   function onClickAndroidApp () {
     document.addEventListener('visibilitychange', () => {
-      if (document.visibilityState == "visible") {
+      if (document.visibilityState === "visible") {
         setVisibilityText1("tab is active")
       } else {
         setVisibilityText2("tab is inactive")
@@ -40,7 +40,7 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.0.8</div>
+      <div>Version: 1.0.9</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Bilgi: {text}</div>
