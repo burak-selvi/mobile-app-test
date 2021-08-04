@@ -32,7 +32,7 @@ function App() {
     // setIframeSrc(appName);
     setText('outside:' + appName);
     window.location.replace(appName);
-    setTimeout(() => {
+    fnc = setTimeout(() => {
       setText('inside:' + appUrl);
       window.location.replace(appUrl);
     }, 2000);
@@ -53,7 +53,7 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.1.6</div>
+      <div>Version: 1.1.7</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Bilgi: {text} visibility: {visibility ? 'true' : 'false'}</div>
