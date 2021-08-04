@@ -31,11 +31,14 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.0.6</div>
+      <div>Version: 1.0.7</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Bilgi: {text}</div>
-      <div>Bilgi - document: {document.hidden}</div>
+      <div>Bilgi - document-hidden: {document.hidden ? 'true' : 'false'}</div>
+      <div>Bilgi - document-webkitHidden: {document.webkitHidden ? 'true' : 'false'}</div>
+      <div>Bilgi - document-mozHidden: {document.mozHidden  ? 'true' : 'false'}</div>
+      <div>Bilgi - document-msHidden: {document.msHidden  ? 'true' : 'false'}</div>
       {/* <iframe title="app" src={iframeSrc} id="l" width="1" height="1" style={{visibility: 'hidden'}}></iframe> */}
     </div>
   );
