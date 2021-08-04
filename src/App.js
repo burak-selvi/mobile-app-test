@@ -4,6 +4,7 @@ import {useState} from 'react';
 function App() {
   // const [iframeSrc, setIframeSrc] = useState('');
   const [text, setText] = useState('');
+  const [visibility, setVisibility] = useState(true);
   const [visibilityText1, setVisibilityText1] = useState('');
   const [visibilityText2, setVisibilityText2] = useState('');
 
@@ -23,7 +24,9 @@ function App() {
     document.addEventListener('visibilitychange', () => {
       if (document.visibilityState === "visible") {
         setVisibilityText1("tab is active")
+        setVisibility(true);
       } else {
+        setVisibility(false);
         setVisibilityText2("tab is inactive")
       }
     })
@@ -34,13 +37,16 @@ function App() {
     window.location.replace(appName);
     setTimeout(() => {
       setText('inside:' + appUrl)
+      if (visibility) {
+        return;
+      }
       window.location.replace(appUrl);
     }, 5000);
   }
 
   return (
     <div className="container">
-      <div>Version: 1.0.9</div>
+      <div>Version: 1.1.0</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Bilgi: {text}</div>
