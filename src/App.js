@@ -9,6 +9,7 @@ function App() {
   const [visibilityText2, setVisibilityText2] = useState('');
   const [visibilityTime1, setVisibilityTime1] = useState('');
   const [visibilityTime2, setVisibilityTime2] = useState('');
+  let fnc;
 
   useEffect(() => {
     document.addEventListener('visibilitychange', () => {
@@ -20,9 +21,10 @@ function App() {
         setVisibilityText2("tab is inactive")
         setVisibilityTime2(new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds());
         setVisibility(false);
+        clearTimeout(fnc);
       }
     });
-  }, []);
+  }, [fnc]);
 
   function onClickIosApp () {
     const appUrl = 'https://apps.apple.com/tr/app/migros-sanal-market/id397585390?l=tr';
@@ -42,18 +44,16 @@ function App() {
     // setIframeSrc(appName);
     setText('outside:' + appName)
     window.location.replace(appName);
-    setTimeout(() => {
-      setText('inside:' + appUrl)
-      if (!visibility) {
-        return;
-      }
+    console.log('visi', visibility)
+    fnc = setTimeout(() => {
+      setText('inside:' + appUrl);
       window.location.replace(appUrl);
-    }, 5000);
+    }, 2000);
   }
 
   return (
     <div className="container">
-      <div>Version: 1.1.5</div>
+      <div>Version: 1.1.6</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Bilgi: {text} visibility: {visibility ? 'true' : 'false'}</div>
