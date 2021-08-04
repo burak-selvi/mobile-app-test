@@ -38,7 +38,7 @@ function App() {
   }
 
   function onClickAndroidApp () {
-    const appUrl = 'https://play.google.com/store/apps/details?id=com.inomera.sm';
+    // const appUrl = 'https://play.google.com/store/apps/details?id=com.inomera.sm';
     const appName = 'intent://path/#Intent;scheme=sanalmarket;package=com.inomera.sm;end'
     // const appName = 'sanalmarket://';
     setText('outside:' + appName)
@@ -52,7 +52,7 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.2.3</div>
+      <div>Version: 1.2.4</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Bilgi: {text} visibility: {visibility ? 'true' : 'false'}</div>
