@@ -18,16 +18,17 @@ function App() {
     const appUrl = 'https://play.google.com/store/apps/details?id=com.inomera.sm';
     const appName = 'sanalmarket://';
     // setIframeSrc(appName);
-    setTimeout(() => {
-      setText('inside set timeout')
-      window.location.replace(appUrl);
-    }, 1000);
-    setText('outside')
+    setText('outside:' + appName)
     window.location.replace(appName);
+    setTimeout(() => {
+      setText('inside set timeout:' + appUrl)
+      window.location.replace(appUrl);
+    }, 100);
   }
 
   return (
     <div className="container">
+      <div>Version: 1.0.0</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Bilgi: {text}</div>
