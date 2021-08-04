@@ -34,7 +34,7 @@ function App() {
     fnc = setTimeout(() => {
       setText('inside:' + appUrl);
       window.location.replace(appUrl);
-    }, 1000);
+    }, 2000);
   }
 
   function onClickAndroidApp () {
@@ -46,12 +46,12 @@ function App() {
     fnc = setTimeout(() => {
       setText('inside:' + appUrl);
       window.location.replace(appUrl);
-    }, 1000);
+    }, 2000);
   }
 
   return (
     <div className="container">
-      <div>Version: 1.2.1</div>
+      <div>Version: 1.2.2</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Bilgi: {text} visibility: {visibility ? 'true' : 'false'}</div>
