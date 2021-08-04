@@ -7,14 +7,18 @@ function App() {
   const [visibility, setVisibility] = useState(true);
   const [visibilityText1, setVisibilityText1] = useState('');
   const [visibilityText2, setVisibilityText2] = useState('');
+  const [visibilityTime1, setVisibilityTime1] = useState('');
+  const [visibilityTime2, setVisibilityTime2] = useState('');
 
   useEffect(() => {
     document.addEventListener('visibilitychange', () => {
       if (document.visibilityState === "visible") {
         setVisibilityText1("tab is active")
+        setVisibilityTime1(new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds());
         setVisibility(true);
       } else {
         setVisibilityText2("tab is inactive")
+        setVisibilityTime2(new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds());
         setVisibility(false);
       }
     });
@@ -49,7 +53,7 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.1.4</div>
+      <div>Version: 1.1.5</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Bilgi: {text} visibility: {visibility ? 'true' : 'false'}</div>
@@ -57,8 +61,8 @@ function App() {
       <div>Bilgi - document-webkitHidden: {document.webkitHidden ? 'true' : 'false'}</div>
       <div>Bilgi - document-mozHidden: {document.mozHidden  ? 'true' : 'false'}</div>
       <div>Bilgi - document-msHidden: {document.msHidden  ? 'true' : 'false'}</div>
-      <div> active: {visibilityText1} time: {new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds()}</div>
-      <div> inactive: {visibilityText2} time: {new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds()}</div>
+      <div> active: {visibilityText1} time: {visibilityTime1}</div>
+      <div> inactive: {visibilityText2} time: {visibilityTime2}</div>
       {/* <iframe title="app" src={iframeSrc} id="l" width="1" height="1" style={{visibility: 'hidden'}}></iframe> */}
     </div>
   );
