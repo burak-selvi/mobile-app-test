@@ -41,12 +41,12 @@ function App() {
         return;
       }
       window.location.replace(appUrl);
-    }, 2000);
+    }, 5000);
   }
 
   return (
     <div className="container">
-      <div>Version: 1.1.2</div>
+      <div>Version: 1.1.3</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Bilgi: {text} visibility: {visibility ? 'true' : 'false'}</div>
