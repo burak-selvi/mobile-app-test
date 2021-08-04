@@ -27,7 +27,7 @@ function App() {
 
   function onClickIosApp () {
     const appUrl = 'https://apps.apple.com/tr/app/migros-sanal-market/id397585390?l=tr';
-    const appName = 'sanalmarket://';
+    const appName = 'sanalmarket://path/';
     setText('outside:' + appName);
     window.location.replace(appName);
 
@@ -52,7 +52,7 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.2.4</div>
+      <div>Version: 1.2.5</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Bilgi: {text} visibility: {visibility ? 'true' : 'false'}</div>
