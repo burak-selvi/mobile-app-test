@@ -11,8 +11,8 @@ function App() {
   let fnc;
 
   useEffect(() => {
-    document.addEventListener('visibilitychange', () => {
-      if (document.visibilityState === "visible") {
+    document.addEventListener('visibilitychange', (e) => {
+      if (!e.target.hidden) {
         setVisibility(true);
         setVisibilityText1("tab is active")
         setVisibilityTime1(new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds());
@@ -27,7 +27,7 @@ function App() {
 
   function onClickIosApp () {
     const appUrl = 'https://apps.apple.com/tr/app/migros-sanal-market/id397585390?l=tr';
-    const appName = 'sanalmarket://path/';
+    const appName = 'sanalmarket://';
     setText('outside:' + appName);
     window.location.replace(appName);
 
@@ -39,7 +39,7 @@ function App() {
 
   function onClickAndroidApp () {
     // const appUrl = 'https://play.google.com/store/apps/details?id=com.inomera.sm';
-    const appName = 'intent://path/#Intent;scheme=sanalmarket;package=com.inomera.sm;end'
+    const appName = 'intent://?utm_source=sm&utm_medium=cpc&utm_campaign=sm#Intent;scheme=sanalmarket;package=com.inomera.sm;end'
     // const appName = 'sanalmarket://';
     setText('outside:' + appName)
     window.location.replace(appName);
@@ -52,7 +52,7 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.2.5</div>
+      <div>Version: 1.2.6</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Bilgi: {text} visibility: {visibility ? 'true' : 'false'}</div>
