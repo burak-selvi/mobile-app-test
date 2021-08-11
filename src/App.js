@@ -43,12 +43,12 @@ function App() {
         //return;  
       }
       setText('inside:' + appUrl);
-      let msg = 'REDIRECT TO APP STORE';
-      if (window.confirm(msg)) {
-        window.location.replace(appUrl);
-      } else {
-        window.close();
-      }
+      // let msg = 'REDIRECT TO APP STORE';
+      // if (window.confirm(msg)) {
+      //   window.location.replace(appUrl);
+      // } else {
+      //   window.close();
+      // }
     }, 50);
     window.location.replace(appName);
   }
@@ -68,7 +68,7 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.2.11</div>
+      <div>Version: 1.2.12</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Bilgi: {text} visibility: {visibility ? 'true' : 'false'}</div>
