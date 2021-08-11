@@ -17,6 +17,7 @@ function App() {
         setVisibilityText1("tab is active")
         setVisibilityTime1(new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds());
       } else {
+        window.close();
         setVisibility(false);
         clearTimeout(fnc);
         setVisibilityText2("tab is inactive")
@@ -44,11 +45,11 @@ function App() {
       }
       setText('inside:' + appUrl);
       // let msg = 'REDIRECT TO APP STORE';
-      // if (window.confirm(msg)) {
+      if (window.confirm(msg)) {
         window.location.replace(appUrl);
-      // } else {
-      //   window.close();
-      // }
+      } else {
+        window.close();
+      }
     }, 50);
     window.location.replace(appName);
   }
@@ -68,7 +69,7 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.2.14</div>
+      <div>Version: 1.2.15</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Bilgi: {text} visibility: {visibility ? 'true' : 'false'}</div>
