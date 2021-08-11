@@ -38,7 +38,7 @@ function App() {
     // }, 2000);
     fnc = setTimeout(() => {
       if (new Date().valueOf() - now > 100) {
-        // window.close() ; 
+        window.close() ; 
         // old way - "return" - but this would just leave a blank page in users browser
         //return;  
       }
@@ -68,7 +68,7 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.2.13</div>
+      <div>Version: 1.2.14</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Bilgi: {text} visibility: {visibility ? 'true' : 'false'}</div>
