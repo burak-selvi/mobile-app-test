@@ -42,7 +42,7 @@ function App() {
       } else {
         window.close();
       }
-    }, 50);
+    }, 1000);
     window.location.replace(appName);
   }
 
@@ -61,7 +61,7 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.2.8</div>
+      <div>Version: 1.2.9</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Bilgi: {text} visibility: {visibility ? 'true' : 'false'}</div>
