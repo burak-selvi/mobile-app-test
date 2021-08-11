@@ -29,12 +29,21 @@ function App() {
     const appUrl = 'https://apps.apple.com/tr/app/migros-sanal-market/id397585390?l=tr';
     const appName = 'sanalmarket://';
     setText('outside:' + appName);
-    window.location.replace(appName);
 
-    fnc = setTimeout(() => {
+    // fnc = setTimeout(() => {
+    //   setText('inside:' + appUrl);
+    //   window.location.replace(appUrl);
+    // }, 2000);
+    setTimeout(() => {
       setText('inside:' + appUrl);
-      window.location.replace(appUrl);
-    }, 2000);
+      let msg = 'REDIRECT TO APP STORE';
+      if (window.confirm(msg)) {
+        window.location.replace(appUrl);
+      } else {
+        window.close();
+      }
+    }, 50);
+    window.location.replace(appName);
   }
 
   function onClickAndroidApp () {
@@ -52,7 +61,7 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.2.6</div>
+      <div>Version: 1.2.7</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Bilgi: {text} visibility: {visibility ? 'true' : 'false'}</div>
