@@ -37,21 +37,23 @@ function App() {
     //   setText('inside:' + appUrl);
     //   window.location.replace(appUrl);
     // }, 2000);
+    window.location.replace(appName);
+
     fnc = setTimeout(() => {
-      if (new Date().valueOf() - now > 100) {
-        window.close() ; 
+      // if (new Date().valueOf() - now > 100) {
+        // window.close() ; 
         // old way - "return" - but this would just leave a blank page in users browser
         //return;  
-      }
+      // }
       setText('inside:' + appUrl);
-      let msg = 'REDIRECT TO APP STORE';
-      if (window.confirm(msg)) {
-        window.location.replace(appUrl);
-      } else {
-        window.close();
-      }
-    }, 5000);
-    window.location.replace(appName);
+      // let msg = 'REDIRECT TO APP STORE';
+      // if (window.confirm(msg)) {
+      //   window.location.replace(appUrl);
+      // } else {
+      //   window.close();
+      // }
+      window.location.replace(appUrl);
+    }, 2000);
   }
 
   function onClickAndroidApp () {
