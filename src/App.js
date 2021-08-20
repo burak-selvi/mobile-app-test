@@ -27,7 +27,7 @@ function App() {
   }, [fnc]);
 
   function onClickIosApp () {
-    let now = new Date().valueOf();
+    // let now = new Date().valueOf();
     
     const appUrl = 'https://apps.apple.com/tr/app/migros-sanal-market/id397585390?l=tr';
     const appName = 'sanalmarket://';
@@ -71,7 +71,7 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.2.17</div>
+      <div>Version: 1.2.19</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Bilgi: {text} visibility: {visibility ? 'true' : 'false'}</div>
