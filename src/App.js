@@ -29,13 +29,7 @@ function App() {
   }, [fnc]);
 
   function onClickIosApp () {
-    // let now = new Date().valueOf();
-
     let now = new Date().valueOf();
-    if (new Date().valueOf() - now > 2000) {
-      clearTimeout(fnc);
-      window.close();
-    }
     
     const appUrl = 'https://apps.apple.com/tr/app/migros-sanal-market/id397585390?l=tr';
     const appName = 'sanalmarket://';
@@ -48,11 +42,12 @@ function App() {
     window.location.replace(appName);
 
     fnc = setTimeout(() => {
-      // if (new Date().valueOf() - now > 100) {
-        // window.close() ; 
+      if (new Date().valueOf() - now > 2000) {
+        clearTimeout(fnc);
+        window.close();
         // old way - "return" - but this would just leave a blank page in users browser
-        //return;  
-      // }
+        return;  
+      }
       setText('inside:' + appUrl);
       let msg = 'REDIRECT TO APP STORE';
       if (window.confirm(msg)) {
@@ -79,7 +74,7 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.3.4</div>
+      <div>Version: 1.3.5</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Bilgi: {text} visibility: {visibility ? 'true' : 'false'}</div>
