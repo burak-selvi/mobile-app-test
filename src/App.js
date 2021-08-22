@@ -44,13 +44,13 @@ function App() {
         //   window.close();
         //   return;  
         // }
-        // setText('inside:' + appUrl);
-        // let msg = 'REDIRECT TO APP STORE';
-        // if (window.confirm(msg)) {
+        setText('inside:' + appUrl);
+        let msg = 'App Store \'a Yönlendiriliyor...';
+        if (window.confirm(msg)) {
           window.location.replace(appUrl);
-        // } else {
-        //   window.close();
-        // }    
+        } else {
+          window.close();
+        }    
       }, 2000);
     
   }
@@ -70,7 +70,7 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.3.11</div>
+      <div>Version: 1.3.13</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Navigator: {navigator.userAgent.toLowerCase()}</div>
