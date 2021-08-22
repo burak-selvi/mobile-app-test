@@ -76,9 +76,10 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.3.7</div>
+      <div>Version: 1.3.8</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
+      <div>Navigator: {navigator.userAgent.toLowerCase()}</div>
       <div>Bilgi: {text} visibility: {visibility ? 'true' : 'false'}</div>
       <div> active: {visibilityText1} time: {visibilityTime1}</div>
       <div> inactive: {visibilityText2} time: {visibilityTime2}</div>
