@@ -12,8 +12,6 @@ function App() {
 
   useEffect(() => {
     document.addEventListener('visibilitychange', (e) => {
-      clearTimeout(fnc);
-      window.close();
       if (!e.target.hidden) {
         setVisibility(true);
         setVisibilityText1("tab is active")
@@ -40,23 +38,27 @@ function App() {
     // }, 2000);
     window.location.replace(appName);
 
-    let now = new Date().valueOf();
-    fnc = setTimeout(() => {
-      if (new Date().valueOf() - now > 2100) {
-        clearTimeout(fnc);
-        window.close();
-        // old way - "return" - but this would just leave a blank page in users browser
-        return;  
-      }
-      setText('inside:' + appUrl);
-      let msg = 'REDIRECT TO APP STORE';
-      if (window.confirm(msg)) {
+    if (navigator.userAgent.toLowerCase().includes('chrome')) {
+      setTimeout(() => {
         window.location.replace(appUrl);
-      } else {
-        window.close();
-      }
-      // window.location.replace(appUrl);
-    }, 2000);
+      }, 100);
+    } else {
+      // let now = new Date().valueOf();
+      fnc = setTimeout(() => {
+        // if (new Date().valueOf() - now > 2100) {
+        //   clearTimeout(fnc);
+        //   window.close();
+        //   return;  
+        // }
+        setText('inside:' + appUrl);
+        let msg = 'REDIRECT TO APP STORE';
+        if (window.confirm(msg)) {
+          window.location.replace(appUrl);
+        } else {
+          window.close();
+        }    
+      }, 2000);
+    }
   }
 
   function onClickAndroidApp () {
@@ -74,7 +76,7 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.3.6</div>
+      <div>Version: 1.3.7</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Bilgi: {text} visibility: {visibility ? 'true' : 'false'}</div>
