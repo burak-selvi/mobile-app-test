@@ -11,6 +11,11 @@ function App() {
   let fnc;
 
   useEffect(() => {
+    let now = new Date().valueOf();
+    if (new Date().valueOf() - now > 2000) {
+      clearTimeout(fnc);
+      window.close();
+    }
     document.addEventListener('visibilitychange', (e) => {
       clearTimeout(fnc);
       window.close();
@@ -73,7 +78,7 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.3.2</div>
+      <div>Version: 1.3.3</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Bilgi: {text} visibility: {visibility ? 'true' : 'false'}</div>
