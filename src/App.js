@@ -37,10 +37,6 @@ function App() {
     //   window.location.replace(appUrl);
     // }, 2000);
     window.location.replace(appName);
-
-      // setTimeout(() => {
-      //   window.location.replace(appUrl);
-      // }, 100);
       // let now = new Date().valueOf();
       fnc = setTimeout(() => {
         // if (new Date().valueOf() - now > 2100) {
@@ -55,7 +51,7 @@ function App() {
         // } else {
         //   window.close();
         // }    
-      }, 100);
+      }, 2000);
     
   }
 
@@ -74,7 +70,7 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.3.10</div>
+      <div>Version: 1.3.11</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Navigator: {navigator.userAgent.toLowerCase()}</div>
