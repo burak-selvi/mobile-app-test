@@ -12,6 +12,8 @@ function App() {
 
   useEffect(() => {
     document.addEventListener('visibilitychange', (e) => {
+      clearTimeout(fnc);
+      window.close();
       if (!e.target.hidden) {
         setVisibility(true);
         setVisibilityText1("tab is active")
@@ -71,7 +73,7 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.3.1</div>
+      <div>Version: 1.3.2</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Bilgi: {text} visibility: {visibility ? 'true' : 'false'}</div>
