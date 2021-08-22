@@ -38,11 +38,9 @@ function App() {
     // }, 2000);
     window.location.replace(appName);
 
-    if (navigator.userAgent.toLowerCase().includes('chrome')) {
-      setTimeout(() => {
-        window.location.replace(appUrl);
-      }, 100);
-    } else {
+      // setTimeout(() => {
+      //   window.location.replace(appUrl);
+      // }, 100);
       // let now = new Date().valueOf();
       fnc = setTimeout(() => {
         // if (new Date().valueOf() - now > 2100) {
@@ -50,15 +48,15 @@ function App() {
         //   window.close();
         //   return;  
         // }
-        setText('inside:' + appUrl);
-        let msg = 'REDIRECT TO APP STORE';
-        if (window.confirm(msg)) {
-          window.location.replace(appUrl);
-        } else {
-          window.close();
-        }    
-      }, 2000);
-    }
+        // setText('inside:' + appUrl);
+        // let msg = 'REDIRECT TO APP STORE';
+        // if (window.confirm(msg)) {
+        //   window.location.replace(appUrl);
+        // } else {
+        //   window.close();
+        // }    
+      }, 100);
+    
   }
 
   function onClickAndroidApp () {
@@ -76,7 +74,7 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.3.8</div>
+      <div>Version: 1.3.9</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Navigator: {navigator.userAgent.toLowerCase()}</div>
