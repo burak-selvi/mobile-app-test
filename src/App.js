@@ -11,11 +11,6 @@ function App() {
   let fnc;
 
   useEffect(() => {
-    let now = new Date().valueOf();
-    if (new Date().valueOf() - now > 2000) {
-      clearTimeout(fnc);
-      window.close();
-    }
     document.addEventListener('visibilitychange', (e) => {
       clearTimeout(fnc);
       window.close();
@@ -35,6 +30,12 @@ function App() {
 
   function onClickIosApp () {
     // let now = new Date().valueOf();
+
+    let now = new Date().valueOf();
+    if (new Date().valueOf() - now > 2000) {
+      clearTimeout(fnc);
+      window.close();
+    }
     
     const appUrl = 'https://apps.apple.com/tr/app/migros-sanal-market/id397585390?l=tr';
     const appName = 'sanalmarket://';
@@ -78,7 +79,7 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.3.3</div>
+      <div>Version: 1.3.4</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Bilgi: {text} visibility: {visibility ? 'true' : 'false'}</div>
