@@ -27,31 +27,33 @@ function App() {
   }, [fnc]);
 
   function onClickIosApp () {
+    window.location.replace('https://m2bf.adj.st?adj_t=xz9rbcr');
     
-    const appUrl = 'https://apps.apple.com/tr/app/migros-sanal-market/id397585390?l=tr';
-    const appName = 'sanalmarket://';
-    setText('outside:' + appName);
+    // const appUrl = 'https://apps.apple.com/tr/app/migros-sanal-market/id397585390?l=tr';
+    // const appName = 'sanalmarket://';
+    // setText('outside:' + appName);
+      // let now = new Date().valueOf();
 
     // fnc = setTimeout(() => {
     //   setText('inside:' + appUrl);
     //   window.location.replace(appUrl);
     // }, 2000);
-    window.location.replace(appName);
-      // let now = new Date().valueOf();
-      fnc = setTimeout(() => {
         // if (new Date().valueOf() - now > 2100) {
         //   clearTimeout(fnc);
         //   window.close();
         //   return;  
         // }
-        setText('inside:' + appUrl);
-        let msg = 'App Store \'a Yönlendiriliyor...';
-        if (window.confirm(msg)) {
-          window.location.replace(appUrl);
-        } else {
-          window.close();
-        }    
-      }, 2000);
+    // window.location.replace(appName);
+    //   fnc = setTimeout(() => {
+    
+    //     setText('inside:' + appUrl);
+    //     let msg = 'App Store \'a Yönlendiriliyor...';
+    //     if (window.confirm(msg)) {
+    //       window.location.replace(appUrl);
+    //     } else {
+    //       window.close();
+    //     }    
+    //   }, 2000);
     
   }
 
@@ -70,7 +72,7 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.3.13</div>
+      <div>Version: 1.3.14</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Navigator: {navigator.userAgent.toLowerCase()}</div>
