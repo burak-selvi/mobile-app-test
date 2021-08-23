@@ -27,11 +27,12 @@ function App() {
   }, [fnc]);
 
   function onClickIosApp () {
-    window.location.replace('https://m2bf.adj.st?adj_t=xz9rbcr');
+    const appName = 'https://m2bf.adj.st?adj_t=xz9rbcr';
+    setText('app name:' + appName);
+    window.location.replace();
     
     // const appUrl = 'https://apps.apple.com/tr/app/migros-sanal-market/id397585390?l=tr';
     // const appName = 'sanalmarket://';
-    // setText('outside:' + appName);
       // let now = new Date().valueOf();
 
     // fnc = setTimeout(() => {
@@ -72,7 +73,7 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.3.14</div>
+      <div>Version: 1.3.15</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Navigator: {navigator.userAgent.toLowerCase()}</div>
