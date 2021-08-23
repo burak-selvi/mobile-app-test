@@ -60,8 +60,9 @@ function App() {
 
   function onClickAndroidApp () {
     // const appUrl = 'https://play.google.com/store/apps/details?id=com.inomera.sm';
-    const appName = 'intent://?utm_source=sm&utm_medium=cpc&utm_campaign=sm#Intent;scheme=sanalmarket;package=com.inomera.sm;end'
+    // const appName = 'intent://?utm_source=sm&utm_medium=cpc&utm_campaign=sm#Intent;scheme=sanalmarket;package=com.inomera.sm;end'
     // const appName = 'sanalmarket://';
+    const appName = 'https://m2bf.adj.st?adj_t=xz9rbcr';
     setText('outside:' + appName)
     window.location.replace(appName);
 
@@ -73,7 +74,7 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.3.16</div>
+      <div>Version: 1.4.1</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Navigator: {navigator.userAgent.toLowerCase()}</div>
