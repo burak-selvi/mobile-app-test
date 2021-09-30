@@ -8,7 +8,6 @@ function App() {
   const [visibilityText2, setVisibilityText2] = useState('');
   const [visibilityTime1, setVisibilityTime1] = useState('');
   const [visibilityTime2, setVisibilityTime2] = useState('');
-  const [isMobile, setMobile] = useState('');
   let fnc;
 
   useEffect(() => {
@@ -75,7 +74,7 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.4.1</div>
+      <div>Version: 1.4.2</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Navigator: {navigator.userAgent.toLowerCase()}</div>
