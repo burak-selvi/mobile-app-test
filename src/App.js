@@ -77,12 +77,12 @@ function App() {
     const lat = 41.001861;
     const lng = 29.054675;
     // window.open(`https://www.google.com/maps/dir//${storeName}/@${lat},@${lng}`);
-    window.open(`https://www.google.com/maps?daddr=${lat},@${lng}`);
+    window.open(`https://www.google.com/maps?daddr=${lat},${lng}`);
   }
 
   return (
     <div className="container">
-      <div>Version: 1.4.8</div>
+      <div>Version: 1.4.9</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Navigator: {navigator.userAgent.toLowerCase()}</div>
