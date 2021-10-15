@@ -76,8 +76,7 @@ function App() {
     const storeName = 'AKASYA İSTANBUL MACROCENTER';
     const lat = 41.001861;
     const lng = 29.054675;
-    // window.open(`https://www.google.com/maps/dir/${storeName}/@${lat},@${lng}`);
-    window.open(`https://www.google.com/maps/dir/${lat},@${lng}/${storeName}`);
+    window.open(`https://www.google.com/maps/dir//${storeName}/@${lat},@${lng}`);
   }
 
   return (
