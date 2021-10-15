@@ -73,7 +73,7 @@ function App() {
   }
 
   function onClickMaps() {
-    const storeName = 'AKASYA İSTANBUL MACROCENTER';
+    // const storeName = 'AKASYA İSTANBUL MACROCENTER';
     const lat = 41.001861;
     const lng = 29.054675;
     // window.open(`https://www.google.com/maps/dir//${storeName}/@${lat},@${lng}`);
@@ -82,7 +82,7 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.4.7</div>
+      <div>Version: 1.4.8</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Navigator: {navigator.userAgent.toLowerCase()}</div>
