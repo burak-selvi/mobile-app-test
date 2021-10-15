@@ -72,15 +72,25 @@ function App() {
     // }, 2000);
   }
 
+  function onClickMaps() {
+    const storeName = 'AKASYA İSTANBUL MACROCENTER';
+    const lat = 41.001861;
+    const lng = 29.054675;
+    window.open(`https://www.google.com/maps/dir//${storeName}/@${lat},@${lng}`);
+  }
+
   return (
     <div className="container">
-      <div>Version: 1.4.3</div>
+      <div>Version: 1.4.4</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Navigator: {navigator.userAgent.toLowerCase()}</div>
       <div>Bilgi: {text} visibility: {visibility ? 'true' : 'false'}</div>
       <div> active: {visibilityText1} time: {visibilityTime1}</div>
       <div> inactive: {visibilityText2} time: {visibilityTime2}</div>
+      <div>
+      <button onClick={onClickMaps}>Click for the google maps</button>
+      </div>
       {/* <div>Mobile: {navigator.userAgentData.mobile ? 'true' : 'false'}</div> */}
     </div>
   );
