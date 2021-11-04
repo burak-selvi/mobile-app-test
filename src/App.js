@@ -87,14 +87,14 @@ function App() {
     a.href = 'data:application/pdf;base64,' + fileBytesBase64;
     a.download = fileName;
     a.click();
-    setTimeout(() => {
-      a.remove();
-    }, 200);
+    // setTimeout(() => {
+    //   a.remove();
+    // }, 200);
   }
 
   return (
     <div className="container">
-      <div>Version: 1.5.0</div>
+      <div>Version: 1.5.1</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Navigator: {navigator.userAgent.toLowerCase()}</div>
