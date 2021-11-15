@@ -100,7 +100,7 @@ function App() {
     document.body.appendChild(a);
     a.click();
     setTimeout(() => {
-      document.body.removeChild(link);
+      document.body.removeChild(a);
       window.URL.revokeObjectURL(url);
     }, 200);
 
