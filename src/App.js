@@ -86,8 +86,8 @@ function App() {
     // a.download = fileName;
     // a.href = 'data:application/pdf;base64,' + base64;
     // const file = new Blob([base64], { type: 'application/octet-stream' });
-    const pdfInBase64 = atob(base64);
-    const newBlob = new Blob([pdfInBase64], { type: 'application/pdf' });
+    // const pdfInBase64 = atob(base64);
+    const newBlob = new Blob([base64], { type: 'application/pdf' });
     const a = document.createElement('a');
     const fileURL = URL.createObjectURL(newBlob);
     a.href = fileURL;
@@ -108,7 +108,7 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.5.7</div>
+      <div>Version: 1.5.8</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Navigator: {navigator.userAgent.toLowerCase()}</div>
