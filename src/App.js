@@ -88,12 +88,12 @@ function App() {
     // const pdfInBase64 = atob(base64);
     // const newBlob = new Blob([base64], { type: 'application/pdf' });
     // const fileURL = URL.createObjectURL(newBlob);
-    const a = document.createElement('a');
-    a.href = 'data:application/pdf;base64,' + base64;
-    // a.href = fileURL;
-    a.download = fileName;
-    a.click();
-    // window.open(fileURL, "_blank");
+    // const linkSource = 'data:application/pdf;base64,' + base64;
+    // const a = document.createElement('a');
+    // a.href = linkSource;
+    // a.download = fileName;
+    // a.click();
+    // window.open(linkSource);
     // a.href = window.URL.createObjectURL(new File([fileName], fileName, {
     //   type: 'application/pdf'
     // }));
@@ -104,11 +104,34 @@ function App() {
     // setTimeout(() => {
     //   a.remove();
     // }, 200);
+
+    // const base64URL = res.data;
+    // const binary = atob(base64URL.replace(/\s/g, ''));
+    const binary = base64;
+    const len = binary.length;
+    const buffer = new ArrayBuffer(len);
+    const view = new Uint8Array(buffer);
+
+    for (let i = 0; i < len; i += 1) {
+      view[i] = binary.charCodeAt(i);
+    }
+
+    // create the blob object with content-type "application/pdf"
+    const blob = new Blob([view], { type: 'application/pdf' });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement('a');
+    document.body.appendChild(a);
+    a.style = 'display: none';
+    a.href = url;
+    a.download = fileName;
+    // a.target = '_blank';
+    a.click();
   }
 
   return (
     <div className="container">
-      <div>Version: 1.5.9</div>
+      <div>Version: 1.6.0</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Navigator: {navigator.userAgent.toLowerCase()}</div>
