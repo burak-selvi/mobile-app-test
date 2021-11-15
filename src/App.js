@@ -93,14 +93,14 @@ function App() {
     //   type: 'application/pdf'
     // }));
     a.click();
-    setTimeout(() => {
-      a.remove();
-    }, 200);
+    // setTimeout(() => {
+    //   a.remove();
+    // }, 200);
   }
 
   return (
     <div className="container">
-      <div>Version: 1.5.4</div>
+      <div>Version: 1.5.5</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Navigator: {navigator.userAgent.toLowerCase()}</div>
