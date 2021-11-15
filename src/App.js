@@ -86,40 +86,16 @@ function App() {
 
     const a = document.createElement('a');
     a.href = 'data:application/octet-stream;base64,' + fileBytesBase64;
-    a.download = fileName + '.pdf';
-    // a.href = 'data:application/pdf;base64,' + fileBytesBase64;
-    // a.setAttribute('download', fileName + '.pdf');
-    // if (typeof a.download === "undefined") {
-    //   a.setAttribute("target", "_blank");
-    // }
-
-    // document.body.appendChild(a);
+    a.download = fileName;
     a.click();
     setTimeout(() => {
-      // document.body.removeChild(a);
       a.remove();
     }, 200);
-
-    // const newWindow = window.open('', '_blank');
-    // const byteCharacters = atob(fileBytesBase64);
-    // const byteNumbers = new Array(byteCharacters.length);
-    // for (let i = 0; i < byteCharacters.length; i++) {
-    //   byteNumbers[i] = byteCharacters.charCodeAt(i);
-    // }
-    // const byteArray = new Uint8Array(byteNumbers);
-    // const file = new Blob([byteArray], { type: 'application/pdf;base64' });
-    // this.pdfUrl = (window.URL || window.webkitURL).createObjectURL(file);
-
-    // const reader = new FileReader();
-    // reader.onloadend = function (e) {
-    //   newWindow.location.href = reader.result;
-    // };
-    // reader.readAsDataURL(file);
   }
 
   return (
     <div className="container">
-      <div>Version: 1.6.11</div>
+      <div>Version: 1.6.12</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Navigator: {navigator.userAgent.toLowerCase()}</div>
