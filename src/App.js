@@ -86,17 +86,18 @@ function App() {
 
     const a = document.createElement('a');
     a.href = 'data:application/octet-stream;base64,' + fileBytesBase64;
+    a.download = fileName + '.pdf';
     // a.href = 'data:application/pdf;base64,' + fileBytesBase64;
-    // a.download = fileName;
-    a.setAttribute('download', fileName + '.pdf');
-    if (typeof a.download === "undefined") {
-      a.setAttribute("target", "_blank");
-    }
+    // a.setAttribute('download', fileName + '.pdf');
+    // if (typeof a.download === "undefined") {
+    //   a.setAttribute("target", "_blank");
+    // }
 
-    document.body.appendChild(a);
+    // document.body.appendChild(a);
     a.click();
     setTimeout(() => {
-      document.body.removeChild(a);
+      // document.body.removeChild(a);
+      a.remove();
     }, 200);
 
     // const newWindow = window.open('', '_blank');
@@ -118,7 +119,7 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.6.10</div>
+      <div>Version: 1.6.11</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Navigator: {navigator.userAgent.toLowerCase()}</div>
