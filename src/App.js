@@ -89,12 +89,7 @@ function App() {
     a.download = fileName;
     setTimeout(() => {
       a.click();
-      a.remove();
     }, 200);
-
-    setTimeout(() => {
-      a.remove();
-    }, 1000);
 
     // const newWindow = window.open('', '_blank');
     // const byteCharacters = atob(fileBytesBase64);
@@ -115,7 +110,7 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.6.6</div>
+      <div>Version: 1.6.7</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Navigator: {navigator.userAgent.toLowerCase()}</div>
