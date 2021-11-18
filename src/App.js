@@ -113,7 +113,11 @@ function App() {
     a.href = fileUrl;
     a.download = `${fileName}.pdf`;
     // a.click();
-    a.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }))
+    a.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }));
+    setTimeout(() => {
+      URL.revokeObjectURL(fileUrl);
+      a.remove();
+    }, 100);
     // setTimeout(() => {
     //   a.remove();
     // }, 200);
@@ -122,7 +126,7 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.6.23</div>
+      <div>Version: 1.6.24</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Navigator: {navigator.userAgent.toLowerCase()}</div>
