@@ -92,19 +92,20 @@ function App() {
     //   a.remove();
     // }, 200);
 
-    const out = new Blob([fileBytesBase64], { type: 'application/pdf' });
-    const fileURL = URL.createObjectURL(out);
-    const a = document.createElement('a');
-    a.href = fileURL;
-    a.target = '_blank';
-    a.download = fileName + '.pdf';
-    document.body.appendChild(a);
-    a.click();
+    const ifr = document.createElement('iframe');
+    ifr.style.display = 'none';
+    document.body.appendChild(ifr);
+    ifr.src = 'data:application/octet-stream;base64,' + fileBytesBase64;
+    ifr.title = fileName;
+    ifr.onload = function (e) {
+      document.body.removeChild(ifr);
+      ifr = null;
+    };
   }
 
   return (
     <div className="container">
-      <div>Version: 1.6.17</div>
+      <div>Version: 1.6.18</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Navigator: {navigator.userAgent.toLowerCase()}</div>
