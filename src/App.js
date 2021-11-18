@@ -94,9 +94,7 @@ function App() {
 
     const datauri = 'data:application/pdf;base64,' + fileBytesBase64;
     window.open(datauri);
-    newWindow = setTimeout(function () {
-      newWindow.document.title = fileName;
-    }, 10);
+    window.document.title = fileName;
   }
 
   return (
