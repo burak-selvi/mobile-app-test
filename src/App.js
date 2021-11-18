@@ -109,14 +109,15 @@ function App() {
     }
     const file = new Blob([uint8Array], { type: 'application/pdf' });
     const fileUrl = URL.createObjectURL(file);
-    const a = document.createElement('a');
-    a.href = fileUrl;
-    a.download = `${fileName}.pdf`;
-    // a.click();
-    a.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }));
+    const link = document.createElement('a');
+    link.href = fileUrl;
+    link.download = `${fileName}.pdf`;
+    document.body.append(link);
+    link.click();
+    // a.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }));
+    link.remove();
     setTimeout(() => {
       URL.revokeObjectURL(fileUrl);
-      a.remove();
     }, 100);
     // setTimeout(() => {
     //   a.remove();
@@ -126,7 +127,7 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.6.24</div>
+      <div>Version: 1.6.25</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Navigator: {navigator.userAgent.toLowerCase()}</div>
