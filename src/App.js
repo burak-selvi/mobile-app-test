@@ -92,7 +92,7 @@ function App() {
     //   a.remove();
     // }, 200);
 
-    const ifr = document.createElement('iframe');
+    let ifr = document.createElement('iframe');
     ifr.style.display = 'none';
     document.body.appendChild(ifr);
     ifr.src = 'data:application/octet-stream;base64,' + fileBytesBase64;
