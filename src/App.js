@@ -107,21 +107,22 @@ function App() {
     for (let i = 0; i < raw.length; i++) {
       uint8Array[i] = raw.charCodeAt(i);
     }
-    const file = new Blob([uint8Array], { type: 'application/octet-stream' });
+    const file = new Blob([uint8Array], { type: 'application/pdf' });
     const fileUrl = URL.createObjectURL(file);
     const a = document.createElement('a');
     a.href = fileUrl;
     a.download = `${fileName}.pdf`;
-    a.click();
-    setTimeout(() => {
-      a.remove();
-    }, 200);
+    // a.click();
+    a.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }))
+    // setTimeout(() => {
+    //   a.remove();
+    // }, 200);
     // window.open(fileUrl);
   }
 
   return (
     <div className="container">
-      <div>Version: 1.6.21</div>
+      <div>Version: 1.6.23</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Navigator: {navigator.userAgent.toLowerCase()}</div>
