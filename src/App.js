@@ -107,7 +107,7 @@ function App() {
     for (let i = 0; i < raw.length; i++) {
       uint8Array[i] = raw.charCodeAt(i);
     }
-    const file = new Blob([uint8Array], { type: 'application/pdf' });
+    const file = new Blob([uint8Array], { type: 'application/octet-stream' });
     const fileUrl = URL.createObjectURL(file);
     const a = document.createElement('a');
     a.href = fileUrl;
@@ -121,7 +121,7 @@ function App() {
 
   return (
     <div className="container">
-      <div>Version: 1.6.20</div>
+      <div>Version: 1.6.21</div>
       <button onClick={onClickIosApp}>Click for the IOS App</button>
       <button onClick={onClickAndroidApp}>Click for the ANDROID App</button>
       <div>Navigator: {navigator.userAgent.toLowerCase()}</div>
