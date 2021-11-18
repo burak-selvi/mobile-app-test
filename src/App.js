@@ -2,8 +2,6 @@ import './App.css';
 import { useEffect, useState } from 'react';
 
 function App() {
-  const [downloadLink, setDownloadLink] = useState('');
-  const [downloadName, setDownloadName] = useState('');
   const [text, setText] = useState('');
   const [visibility, setVisibility] = useState(true);
   const [visibilityText1, setVisibilityText1] = useState('');
