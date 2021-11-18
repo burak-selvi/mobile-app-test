@@ -103,7 +103,7 @@ function App() {
 
     let link = document.createElement('a');
     link.innerHTML = 'Download PDF file';
-    link.download = 'file.pdf';
+    link.download = `${fileName}.pdf`;
     link.href = 'data:application/octet-stream;base64,' + fileBytesBase64;
     document.body.appendChild(link)
 
